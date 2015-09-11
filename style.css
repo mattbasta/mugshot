@@ -38,6 +38,9 @@ main > div {
     height: 100%;
     padding: 10px;
 }
+main > div:first-of-type {
+    border-right: 1px solid #ccc;
+}
 
 
 button {
