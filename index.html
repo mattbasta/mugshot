@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mugshot</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="codemirror.css">
+</head>
+<body>
+  <div class="toolbar">
+    <button class="start">Uglify</button>
+    <label>
+      <input type="checkbox" class="opt-babel" checked>
+      <span>Babelify</span>
+    </label>
+    <label>
+      <input type="checkbox" class="opt-babel-stage0" checked>
+      <span>Babel Stage 0</span>
+    </label>
+    <label>
+      <input type="checkbox" class="opt-compress" checked>
+      <span>Compress</span>
+    </label>
+    <label>
+      <input type="checkbox" class="opt-mangle" checked>
+      <span>Mangle</span>
+    </label>
+    <label>
+      <input type="checkbox" class="opt-unsafe">
+      <span>Unsafe</span>
+    </label>
+    <span class="stats"></span>
+  </div>
+  <main>
+    <textarea class="input"></textarea>
+    <textarea class="output"></textarea>
+  </main>
+  <script src="dist.js"></script>
+</body>
+</html>
