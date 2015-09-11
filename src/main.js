@@ -44,7 +44,7 @@ document.querySelector('button.start').addEventListener('click', function(e) {
     }
     var finalGZ = gzs.sync(result);
     var finalPercent = Math.round(result.length / raw.length * 100).toString();
-    var finalGZPercent = Math.round(result.length / raw.length * 100).toString();
+    var finalGZPercent = Math.round(finalGZ / raw.length * 100).toString();
     statsData += ', ' + result.length + ' min (' + finalPercent + '%)';
     statsData += ', ' + finalGZ + ' min+gzip (' + finalGZPercent + '%)';
     stats.innerHTML = statsData;
