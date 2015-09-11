@@ -18,12 +18,20 @@ var outputMirror = cm.fromTextArea(output, {mode: 'javascript'});
 
 document.querySelector('button.start').addEventListener('click', function(e) {
     e.preventDefault();
+
+    stats.innerHTML = '';
+
     var raw = inputMirror.getValue();
     var processed = raw;
     if (getOption('babel')) {
-        processed = babel.transform(raw, {
-            stage: getOption('babel-stage0') ? 0 : 2,
-        }).code;
+        try {
+            processed = babel.transform(raw, {
+                stage: getOption('babel-stage0') ? 0 : 2,
+            }).code;
+        } catch (e) {
+            outputMirror.setValue('/*\n' + e.toString() + '\n*/');
+            return;
+        }
     }
     var result;
     try {
